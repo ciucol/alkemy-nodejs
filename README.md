@@ -5,14 +5,14 @@
 **05/10/21**
 1. Design db
 <figure>
-    <img style="width:400px" src="./src/img/alkemy-Page-1.drawio.png">
+    <img style="width:600px" src="./src/img/alkemy-Page-1.drawio.png">
     <figcaption>db</figcaption>
     <br/>
 </figure>
 
 2. Arquitecture
 <figure>
-    <img style="width:400px" src="./src/img/alkemy-Page-2.drawio.png">
+    <img style="width:600px" src="./src/img/alkemy-Page-2.drawio.png">
     <figcaption>db</figcaption>
     <br/>
 </figure>
