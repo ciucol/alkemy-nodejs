@@ -11,6 +11,6 @@ server.use(express.json())
 server.use(morgan('dev'))
 server.use(cors)
 
-server.listen(host, port, () => {
+server.listen(port, host, () => {
   console.log(`Server running at ${host}:${port}`)
 })

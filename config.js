@@ -6,9 +6,9 @@ module.exports = {
     host: process.env.API_HOST
   },
   db: {
-    user: process.env.API_USER,
-    pass: process.env.API_PASS,
-    name: process.env.API_NAME,
-    port: process.env.API_PORT
+    user: process.env.DB_USER,
+    pass: process.env.DB_PASS,
+    name: process.env.DB_NAME,
+    port: process.env.DB_PORT
   }
 }
