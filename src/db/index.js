@@ -19,15 +19,22 @@ Character.belongsTo(User)
 Genre.hasMany(Content)
 Content.belongsTo(Content)
 
-Character.belongsToMany(Content, { throwgh: 'character_content' })
-Content.belongsToMany(Character, { throwgh: 'character_content' })
+Character.belongsToMany(Content, { through: 'character_content' })
+Content.belongsToMany(Character, { through: 'character_content' })
 
 sequelize.sync({ alter: true })
   .then(async () => {
     try {
       await sequelize.authenticate()
-      console.log('Connection has been established successfully')
+      console.log('Connection db has been established successfully')
     } catch (error) {
       console.error('Unable to connect to the database')
     }
   })
+
+module.exports = {
+  Character,
+  Content,
+  Genre,
+  User
+}

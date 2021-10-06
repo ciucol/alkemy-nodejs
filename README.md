@@ -36,3 +36,5 @@ Package
 4. db and models feature/db
 
 5. Endpoints
+
+6. Register

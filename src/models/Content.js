@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize')
 
 module.exports = (sequelize) => {
-  return sequelize.define('Character', {
+  return sequelize.define('Content', {
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -13,14 +13,10 @@ module.exports = (sequelize) => {
       type: DataTypes.DATE
     },
     rating: {
-      type: DataTypes.ENUM({
-        values: ['1', '2', '3', '4', '5']
-      })
+      type: DataTypes.STRING
     },
     type: {
-      type: DataTypes.ENUM({
-        values: ['Movie', 'Tv Show']
-      })
+      type: DataTypes.STRING
     }
   })
 }
