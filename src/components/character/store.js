@@ -2,20 +2,24 @@ const { Character, User } = require('../../db')
 
 const listCharacter = async (newCharacter, userId) => {
   try {
-    const user = await User.findByPk(userId)
-    const character = await user.createCharacter(newCharacter)
-    console.log(character)
-    return character
-  } catch (error) {
-    return error
+    return Character.findAll({ attributes: { exclude: ['createdAt', 'updatedAt'] } })
+  } catch ({ message: error }) {
+    throw new Error(error)
   }
 }
-const newCharacter = async (newCharacter, userId) => {
+const newCharacter = async ({ name, img, age, weight, story }, userId) => {
   try {
+    const newCharacter = {
+      name,
+      img,
+      age,
+      weight,
+      story
+    }
     const user = await User.findByPk(userId)
     return await user.createCharacter(newCharacter)
-  } catch (error) {
-    return error
+  } catch ({ message: error }) {
+    throw new Error(error)
   }
 }
 const updateCharacter = async (newCharacter, userId) => {
@@ -24,18 +28,20 @@ const updateCharacter = async (newCharacter, userId) => {
     const character = await user.createCharacter(newCharacter)
     console.log(character)
     return character
-  } catch (error) {
-    return error
+  } catch ({ message: error }) {
+    throw new Error(error)
   }
 }
-const deleteCharacter = async (newCharacter, userId) => {
+const deleteCharacter = async (characterId) => {
+  console.log('here')
   try {
-    const user = await User.findByPk(userId)
-    const character = await user.createCharacter(newCharacter)
-    console.log(character)
-    return character
-  } catch (error) {
-    return error
+    const userDelete = await Character.destroy({ where: { id: characterId } })
+    if (userDelete) {
+      return 'Character deleted'
+    }
+    throw new Error('Character not found')
+  } catch ({ message: error }) {
+    throw new Error(error)
   }
 }
 
