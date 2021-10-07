@@ -25,16 +25,22 @@ router.post('/', [
     .catch(e => response.error(req, res, 404, e, 'Message'))
 })
 
-router.put('/', (req, res) => {
+router.put('/', [
+  tokenValidation,
+  validation
+], (req, res) => {
   controller
     .function()
     .then(message => response.success(req, res, 201, message))
     .catch(e => response.error(req, res, 404, e, 'Message'))
 })
 
-router.delete('/', (req, res) => {
+router.delete('/:id', [
+  tokenValidation,
+  validation
+], (req, res) => {
   controller
-    .function()
+    .deleteCharacter(req.params.id)
     .then(message => response.success(req, res, 201, message))
     .catch(e => response.error(req, res, 404, e, 'Message'))
 })
