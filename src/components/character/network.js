@@ -25,12 +25,12 @@ router.post('/', [
     .catch(e => response.error(req, res, 404, e, 'Message'))
 })
 
-router.put('/', [
+router.put('/:id', [
   tokenValidation,
   validation
 ], (req, res) => {
   controller
-    .function()
+    .updateCharacter(req.body, req.params.id)
     .then(message => response.success(req, res, 201, message))
     .catch(e => response.error(req, res, 404, e, 'Message'))
 })
