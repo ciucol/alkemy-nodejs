@@ -37,5 +37,10 @@ Package
 
 5. Endpoints
 
+
 ### `Day 2`
-6. Register/Login -> with express-validator and JWT
+6. JWT and express-validator
+
+7. Register/Login -> with 
+
+8. Characters Create
