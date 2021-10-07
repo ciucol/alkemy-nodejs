@@ -2,10 +2,7 @@ const { Character, User } = require('../../db')
 
 const listCharacter = async (newCharacter, userId) => {
   try {
-    const user = await User.findByPk(userId)
-    const character = await user.createCharacter(newCharacter)
-    console.log(character)
-    return character
+    return Character.findAll({ attributes: { exclude: ['createdAt', 'updatedAt'] } })
   } catch (error) {
     return error
   }

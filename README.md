@@ -44,3 +44,5 @@ Package
 7. Register/Login -> with 
 
 8. Characters Create
+
+9. Characters list

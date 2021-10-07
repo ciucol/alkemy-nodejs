@@ -5,9 +5,12 @@ const response = require('../../routes/response')
 const validation = require('../../middlewares/validation')
 const tokenValidation = require('../../middlewares/tokenValidation')
 
-router.get('/', (req, res) => {
+router.get('/', [
+  tokenValidation,
+  validation
+], (req, res) => {
   controller
-    .function()
+    .listCharacter()
     .then(message => response.success(req, res, 201, message))
     .catch(e => response.error(req, res, 404, e, 'Message'))
 })
