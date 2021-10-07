@@ -37,4 +37,4 @@ Package
 
 5. Endpoints
 
-6. Register
+6. Register/Login -> with express-validator and JWT
