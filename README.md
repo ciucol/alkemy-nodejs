@@ -39,6 +39,8 @@ Package
 
 
 ### `Day 2`
+
+**06/10/21**
 6. JWT and express-validator
 
 7. Register/Login -> with 
@@ -48,3 +50,10 @@ Package
 9. Characters -> List
 
 10. Characters -> Delete
+
+
+### `Day 3`
+
+**07/10/21**
+11. Characters -> Update
+

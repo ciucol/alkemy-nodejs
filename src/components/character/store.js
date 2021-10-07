@@ -7,6 +7,7 @@ const listCharacter = async (newCharacter, userId) => {
     throw new Error(error)
   }
 }
+
 const newCharacter = async ({ name, img, age, weight, story }, userId) => {
   try {
     const newCharacter = {
@@ -22,18 +23,20 @@ const newCharacter = async ({ name, img, age, weight, story }, userId) => {
     throw new Error(error)
   }
 }
-const updateCharacter = async (newCharacter, userId) => {
+
+const updateCharacter = async (infoCharacter, characterId) => {
   try {
-    const user = await User.findByPk(userId)
-    const character = await user.createCharacter(newCharacter)
-    console.log(character)
-    return character
+    const character = await Character.findByPk(characterId)
+    for (const property in infoCharacter) {
+      character[property] = infoCharacter[property]
+    }
+    return await character.save()
   } catch ({ message: error }) {
     throw new Error(error)
   }
 }
+
 const deleteCharacter = async (characterId) => {
-  console.log('here')
   try {
     const userDelete = await Character.destroy({ where: { id: characterId } })
     if (userDelete) {
