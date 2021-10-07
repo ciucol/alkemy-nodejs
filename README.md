@@ -37,4 +37,5 @@ Package
 
 5. Endpoints
 
+### `Day 2`
 6. Register/Login -> with express-validator and JWT
